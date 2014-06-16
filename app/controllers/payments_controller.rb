@@ -3,10 +3,10 @@ class PaymentsController < ApplicationController
   end
 
   def success
-    render text: success
+    render text: 'success'
   end
 
   def fail
-    render text: fail
+    render text: 'fail'
   end
 end
