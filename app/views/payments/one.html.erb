@@ -1,10 +1,11 @@
 hello
 
+merchantId = <%= @merchant_id %>
 <form name="payFormCcard" method="post" action="<%= @paydollar_url %>">
   <input type="hidden" name="merchantId" value="<%= @merchant_id %>">
   <input type="hidden" name="amount" value="<%= @amount %>" >
   <input type="hidden" name="orderRef" value="<%= @order_id %>">
-  <input type="hidden" name="currCode" value="344" >
+  <input type="hidden" name="currCode" value="<%= @curr_code %>">
   <input type="hidden" name="mpsMode" value="NIL" >
   <input type="hidden" name="successUrl" value="http://localhost:5000/success">
   <input type="hidden" name="failUrl"    value="http://localhost:5000/fail">
