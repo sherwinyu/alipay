@@ -4,7 +4,7 @@ class PaymentsController < ApplicationController
     @paydollar_url = Figaro.env.PAYDOLLAR_URL
     @merchant_id = Figaro.env.PAYDOLLAR_MERCHANT_ID
     @curr_code = Figaro.env.PAYDOLLAR_CURRCODE
-    @amount = 31.25
+    @amount = 0.05
     @order_id = Time.now.to_i % 1.month
   end
 
