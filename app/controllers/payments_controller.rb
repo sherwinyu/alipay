@@ -5,7 +5,7 @@ class PaymentsController < ApplicationController
     @merchant_id = Figaro.env.PAYDOLLAR_MERCHANT_ID
     @curr_code = Figaro.env.PAYDOLLAR_CURRCODE
     @amount = 3000
-    @order_id = 1
+    @order_id = Time.now.to_i % 1.month
   end
 
   def success
