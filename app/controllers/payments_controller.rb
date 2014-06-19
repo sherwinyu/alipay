@@ -15,4 +15,38 @@ class PaymentsController < ApplicationController
   def fail
     render text: 'fail'
   end
+
+  def callback
+    ##
+    # http://requestb.in/vu0k3xvu?inspect#12wa42
+    #
+    # POST
+    #
+    # AlertCode:
+    # eci:
+    # sourceIp: 209.197.20.245
+    # Holder:
+    # PayRef: 1552597
+    # src: 05
+    # prc: 1
+    # Ref: 893184
+    # Cur: 840
+    # Ord: 0000927821552597
+    # payerAuth:
+    # ipCountry:
+    # Amt: 555.00
+    # remark:
+    # AuthId:
+    # successcode: 1
+    #
+    # Parameters of interest are:
+    #   - Ref: the order_id that we pass. absolutely must be there
+    #   - Cur: currency code
+    #   - merchantId: should be our merchant id. sometimes is missing
+    #   - TxTime: sometimes missing. china timezone
+
+    # Pseudocode:
+    # @payment = Payment.find_by_id params[:Ref]
+    # ....
+  end
 end
