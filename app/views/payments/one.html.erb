@@ -1,6 +1,10 @@
 hello
 
-merchantId = <%= @merchant_id %>
+<ul>
+  <li>merchantId = <%= @merchant_id %></li>
+  <li>order_id = <%= @order_id %></li>
+  <li>amount = <%= @amount %></li>
+</ul>
 <form name="payFormCcard" method="post" action="<%= @paydollar_url %>">
   <input type="hidden" name="merchantId" value="<%= @merchant_id %>">
   <input type="hidden" name="amount" value="<%= @amount %>" >
